@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "mode": "primary-budget-saving",
+  "human_language": "auto",
+  "primary_providers": [],
+  "models": {},
+  "roles": {"orchestrator": null, "top_primary": null, "reserve_primary": null, "main_external": null},
+  "external_order": [],
+  "adapters": {},
+  "connections": {},
+  "runtimes": {},
+  "app_server": null
+}
