@@ -246,8 +246,11 @@ preflight/driver. Для supporting actor сохраняется исходны�
 это не разрешение заводить новый task chat вместо существующего.
 
 CLI не обнаруживает прежнего writer другой операции и не проверяет cleanup
-автоматически. Без применимой границы менеджер не выдаёт новый grant и не вызывает
-writer; ACK/terminal/новая папка её не создают. Флаги подтверждения cleanup не
+автоматически. Допустимость нового linked native назначения на оставшуюся
+обратимую локальную работу определяет default policy в [operations](operations.md):
+после uncertainty deadline отдельные project opt-in, exact terminal и cleanup
+не требуются; исходные разрешения, текущий scope и actual controls сохраняются.
+Для непокрытых эффектов нужна прежняя граница; ACK/новая папка её не создают. Флаги подтверждения cleanup не
 введены. Для fresh text-only после конечного ожидания уже существует
 `uncertainty-continue --profile`; его finite chain/consent/independence не меняются,
 а native review с shell/report write не становится text-only. Отсутствующий binding
@@ -414,5 +417,7 @@ Late results are inspected only through frozen protected paths and matching
 identity/hash. A completion resolves the chain and awaits ordinary independent
 intake; another alternative cannot be launched to shop for a preferred verdict.
 Possible overlapping inference/cost remains within the authorized read-only
-policy. Native writes and uncertain external effects retain their separate
-ownership/quiescence rules in [operations](operations.md).
+policy. Covered native local continuation/integration follows the default policy in
+[operations](operations.md) through a separate compatible native assignment; this
+text CLI does not implement it. Uncertain external effects and non-covered writes
+retain their ownership/quiescence rules.

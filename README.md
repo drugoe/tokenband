@@ -4,9 +4,9 @@
 
 Keep project work organised, resumable and independently checked. TokenBand gives AI agents a shared task list, a dedicated chat for each substantial task, and a clear process for reviewing and accepting results.
 
-**[Download ZIP](https://github.com/drugoe/tokenband/raw/f5ed0fd04856f4b659cb8762fd9e6db2a9f6cfe0/tokenband-0.6.6-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
+**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.11-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
 
-**0.6.6** · **Experimental** · [**MIT**](LICENSE)
+**0.6.11** · **Experimental** · [**MIT**](LICENSE)
 
 ## What you get
 
@@ -16,6 +16,10 @@ Keep project work organised, resumable and independently checked. TokenBand give
 - **Useful beyond code.** The same rules fit research, writing and content production when tasks are substantive enough to need a persistent chat.
 
 Simple factual answers and meaning-preserving mechanical corrections stay direct. Even a small change to application, project, skill or process behavior requires its own persistent task chat. Other substantial work also uses a task chat and the applicable independent review.
+
+## Latest update
+
+Version 0.6.11 includes visible milestone results, a shorter setup conversation, cleanup fixes and Kimi Code discovery notes. For already authorized reversible local work, the manager continues after at most 15 minutes of uncertainty without separate project activation or terminal/cleanup proof, using a separate working copy when earlier writes remain possible and reconciling changes before integration. This does not guarantee process termination, physical isolation or real-time wakeup, and never removes Stop, actual denials, consent or external-effect gates. See [release notes](docs/releases/0.6.11.md).
 
 ## How it fits
 

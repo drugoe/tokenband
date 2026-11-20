@@ -6,8 +6,8 @@
 
 Download the public installation archive:
 
-- [tokenband-0.6.6-skill.zip](https://github.com/drugoe/tokenband/raw/f5ed0fd04856f4b659cb8762fd9e6db2a9f6cfe0/tokenband-0.6.6-skill.zip)
-- SHA-256: `b370e438e98b97f3ebdf46e9f0386ed6fd4df940b0e1ad816aba88572e1b3adc`
+- [tokenband-0.6.11-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.11-skill.zip)
+- SHA-256: `d581347a51174e2acbba247463ba061723089b93006221bf40a15266cdedaede`
 
 The ZIP contains the plain skill package: `SKILL.md`, reference documents, templates and an optional Python worker. It is an instruction set, not a finished configured environment.
 
@@ -23,7 +23,7 @@ After placement, ask the agent to list or describe the skill to verify it is dis
 
 ## Host compatibility
 
-The instructions do not require a particular model family. The full workflow still needs a compatible application integration. The package has a Codex native route and a restricted-text Claude driver; the latter does not provide a complete Claude Code task lifecycle. A full TokenBand lifecycle in Kimi Code is not established by this package. Check the actual integration rather than assuming that support for `SKILL.md` provides every operation.
+The instructions do not require a particular model family. The full workflow still needs a compatible application integration. The package has a Codex native route and a restricted-text Claude driver; the latter does not provide a complete Claude Code task lifecycle. Kimi Code discovery and state-preservation notes are included in [the host guide](../skill/tokenband/references/host-kimi.md); a bundled Kimi native driver and a full TokenBand lifecycle in Kimi Code are not established by this package. Check the actual integration rather than assuming that support for `SKILL.md` provides every operation.
 
 ## 3. One host-specific installation example
 

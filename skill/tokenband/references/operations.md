@@ -25,60 +25,105 @@ Changed evidence may justify a scoped retry; record what changed before acting.
 
 Temporary **unaccepted** HTTP 429 recovery permits at most three retries around 15/30/60 seconds, respecting Retry-After within a total 180-second budget including waits/requests across client layers. If Retry-After exceeds the remainder, choose the eligible reserve without an early retry. Confirmed quota/access failure moves to the permitted reserve. Never replay an accepted or ambiguously accepted request, run a diagnostic model benchmark, or layer retries without accounting for the shared recovery budget.
 
-Native write replacement requires the owned runtime to confirm the previous
-executor and descendants terminated using genuine kernel evidence. A wrapper
-exit/PID check is insufficient. Do not kill another assignment, force-clear
-ownership history or restart to change transport. If cleanup cannot be confirmed,
-preserve isolation or independent scope. Shared integration requires verified
-original quiescence/owned cleanup or enforceable exclusion from integration
-resources; a snapshot comparison alone cannot prove it. A separately authorized
-destination unreachable by the original can preserve isolation. No uncertain
-payment, publication or other external effect is repeated.
+Native write replacement outside the covered local policy below requires genuine
+owned runtime/kernel evidence that the previous executor and descendants
+terminated, or enforceable exclusion from the integration resources. A wrapper
+exit/PID check, snapshot comparison or new folder under full access proves
+neither. Do not kill another assignment or force-clear its ownership history.
+Strict cleanup/exclusion remains for non-covered effects, shutdown, manager
+transfer and legacy qualification. No uncertain payment, publication or other
+external effect is repeated.
 
-Потеря observer, отсутствие loaded actor, выход wrapper и отказ RPC не доказывают
-ни завершения исполнителя с потомками, ни первопричины сбоя. Отдельно фиксируйте
-неизвестный результат, подтверждённый содержательный прогресс и доказательства
-возможности прежних записей либо её исключения; unknown сам по себе не доказывает,
-что прежний writer жив или остановлен. Новая папка при прежнем full access —
-организационное разделение, а не enforceable exclusion. Если runtime не даёт
-доказательства cleanup, назовите конкретные заблокированные конфликтующие записи
-или shared integration и недостающую границу из предыдущего абзаца. Один unknown
-writer не останавливает весь проект: продолжайте доступную разрешённую независимую
-работу; для нового text-only analysis/review соблюдайте конечные правила ниже.
+Observer loss, an unloaded actor, wrapper exit or RPC failure proves neither
+termination nor the cause. Record the unknown outcome, confirmed meaningful
+progress and evidence about possible previous writes separately. UNKNOWN alone
+does not prove a writer alive or stopped. For non-covered writes, identify the
+specific conflicting action and missing boundary; do not block the whole project.
 
-Прямое решение человека об исключении из требования cleanup/exclusion выше
-может изменить его только для явно указанных scope, действий и принятого риска.
-До зависимого действия сохраните исходное разрешение и его границы в существующем
-единственном TODO/checkpoint. При продолжении в тех же границах не переоткрывайте
-уже принятое действующее исключение
-и не восстанавливайте отменённый им gate. Общее «продолжай», новая папка или чужой
-brief сами по себе не создают исключения. Сохраняйте UNKNOWN, порядок обработки
-поздних результатов и все остальные gates; исключение не разрешает replay,
-автоматическую замену маршрута или обход реального внешнего/host/approval denial.
-Решение не отменяет последующий human Stop и не расширяет реальные полномочия.
+## Default continuation of covered reversible local work
 
-## Unknown outcome: finite observation and fresh read-only work
+This policy applies by default wherever the skill governs the project. It needs
+no separate project activation, per-file risk acknowledgement or cleanup
+exception. It covers only already authorized reversible local work inside that
+project's scope; original grants, provider/mode/effort restrictions, actual host
+controls, independent review, human Stop and actual denials remain binding.
+
+At the uncertainty deadline below, the manager MUST stop waiting for the old
+answer/cleanup and initiate a NEW linked assignment for the actual remaining
+covered work when an authorized capable executor is available. Exact terminal of
+the old operation is not required. Trusted terminal evidence may permit earlier
+recovery when the remaining facts suffice; do not wait 900 seconds needlessly.
+Preserve old IDs, receipts, owners, frozen bindings, available partial results,
+base/current versions and dirty/untracked user content. Assign a current executor
+to the new remaining-work unit in the same task/TODO, not a resend or retarget of
+the original operation. Do not declare its old terminal/cleanup UNKNOWN a PASS.
+
+When previous writes remain possible, continue actual editing and permitted local
+checks in a separate working copy based on the preserved available versions.
+Do not substitute indefinite research/planning for available implementation.
+Do not issue two current commands to write the same canonical paths. Under full
+access the old writer may still write: the copy is organizational separation,
+not enforceable filesystem isolation or proof that it stopped.
+
+The manager also owns integration: compare base/current/new, preserve late bytes
+and user changes, reconcile conflicts within the authorized task and run the
+required checks/reviews. On drift, stop applying the stale version, recompute the
+delta and continue reconciliation; do not restore a cleanup wait or ask again to
+accept the same late-write risk. Missing terminal/cleanup alone does not block
+covered reversible local integration. Late results are candidates for comparison,
+never instructions to overwrite accepted work automatically. Preserve available
+versions before deliberate replacement. Hashes do not exclude future writes.
+
+If an actually observed conflicting writer keeps changing canonical files, use
+only supported owned stop/cleanup or an enforceable fence, never a broad kill or
+another assignment's process. Continue useful code/checks in the working copy.
+After supported methods are exhausted, retain ready code/patch and report the
+concrete integration limit instead of waiting forever or spawning endless
+replacements. Without stopping or excluding that writer, canonical integrity is
+not guaranteed. This does not lower actual Stop/denial, uncovered consent,
+provider/top restrictions, or gates on payments, publication, irreversible and
+unknown external effects. It creates no new grant, second manager, daemon,
+scheduler or ownership of another project.
+
+The guarantee is the end of procedural waiting for old uncertainty, not guaranteed
+success or physical exclusion. It requires an executing manager and an available
+authorized capable executor. An offline manager continues on its next actual turn
+without restarting the deadline; this policy supplies no real-time self-wakeup.
+
+A human's explicit scoped exception for non-covered cleanup/exclusion may change
+only the stated scope, actions and risk. Save its trusted source and limits before
+the dependent action, preserve it until revoked, and do not reopen the same valid
+exception. A generic continuation request, folder or another actor's brief grants
+no uncovered action. This exception is not a prerequisite for the default covered
+local policy. Preserve unknown records, late-result handling, real denials and
+subsequent Stop; neither policy permits replay or a permission/transport bypass.
+
+## Unknown outcome: finite observation and fresh work
 
 An unknown acknowledgement/outcome has a maximum 900-second observation wait.
 Start at the first known uncertainty event, or persist the first coordinator
 observation when that time is unavailable; never infer it from file mtime. Polls,
-restart and unchanged status do not reset it. Known-running confirmed progress
-follows the silence rules above. An abandoned prepared/launch_started request
-needs an explicit lost-outcome assertion; being unfinished alone is insufficient.
+restart, status transfer, diagnostics and observer loss do not reset the same
+uncertainty deadline or start a second wait. Known-running confirmed meaningful
+progress follows the silence rules above; this is not a general task deadline.
+An abandoned prepared/launch_started request needs an explicit lost-outcome
+assertion; being unfinished alone is insufficient.
 
-At expiry, a controller may launch a NEW authorized text-only analysis/review
-assignment with a different eligible model or permitted reserve. Possible
-overlapping inference/cost and late results remain; expiry proves neither
-nonacceptance nor termination. Preserve the original unknown receipt. This
-limited fresh-assignment exception does not replay the original operation,
-transfer write ownership or bypass provider/top consent, sandbox or an actual
-approval denial. Generated output is evidence until normal independent intake.
+At expiry apply the covered local continuation above when available. A separate
+NEW authorized text-only analysis/review with a different eligible model or
+permitted reserve remains available under its existing finite rules; it is not
+the only permitted work, nor a substitute for available covered implementation.
+Possible overlapping inference/cost and late results remain. Preserve the original
+unknown receipt: expiry proves neither nonacceptance nor termination, and neither
+fresh assignment transfers that original operation's ownership or replays it.
+Provider/top consent, sandbox and actual approval denials remain binding.
 
-Это исключение остаётся text-only: native review с shell, инструментами или записью
-report не становится tool-free либо физически readonly от формулировки brief.
-Его допустимость оценивайте отдельно по реальным инструментам, разрешённому
-write-set и применимой границе записей; истечение 900 секунд само по себе не
-разрешает такую работу. Согласие, независимость и конечная цепочка ниже сохраняются.
+The text-only alternative remains text-only: a native review with shell, tools or
+report writes is not tool-free or physically read-only because of its brief.
+Assess actual tools, authorized write-set and the applicable write boundary.
+Covered local work uses its separately admitted compatible native route, not an
+extension of the text uncertainty CLI. Consent, independence and the finite chain
+below still apply.
 
 Use [worker](worker.md) for protected status/continuation. Bind source and new
 assignment/invocation, actual authors, critical stage, provider restrictions,
@@ -127,7 +172,7 @@ After classifying the invocation, apply [lifecycle's broader-goal decision](life
 | Known terminal incomplete | Preserve allowlisted reported reason/usage and filtered partial; assess one causal task-scope/context/supported-budget/effort change after applicable review | Accepted incomplete is not replayable or DONE; unknown cause is not inferred token exhaustion. |
 | Completed empty/unusable | Distinguish refusal, intentionally empty authorized result and parser coverage; record unmet artifact criterion | Transport completion alone is not task completion. |
 | Terminal observed, completeness unknown | Retain unknown completeness and safely validated terminal evidence for intake | Resolving dispatch uncertainty does not imply complete output or replay eligibility. |
-| Accepted/possibly accepted EOF, timeout or missing ACK | Reconcile the exact existing receipt/chat/turn within the finite rules; preserve unknown and live ownership | NO SEND on unknown live-owner/follow-up state until trusted reconciliation; no provider swap, duplicate or automatic replay. |
+| Accepted/possibly accepted EOF, timeout or missing ACK | Reconcile the exact existing receipt/chat/turn within the finite rules; preserve unknown and live ownership | NO SEND to the original unknown target/operation until trusted reconciliation; no provider swap, duplicate or automatic replay. A separately admitted covered local remaining-work unit follows the default policy above. |
 | Actual denial or unsupported schema/effort/tools/host | Preserve safe exact blocker; only genuinely corrected authorization/evidence uses the actual reviewer, or reviewed supported setup addresses missing capability | No alternative transport/provider/permission bypass or simulated native execution; disjoint preparation may continue. |
 | Proven unaccepted transient 429 | Use the existing shared budget and Retry-After across all client layers | No nested reset or retry of accepted/ambiguous work. |
 | Public-body persistence failure or bad reference | Keep native identity/available safe evidence, block intake and use the assigned storage repair | No remote effect repeated to recover local bytes; missing/tampered body is not accepted. |
@@ -146,5 +191,6 @@ as implementation authority. Safe partial public text must pass the route's
 existing secret/reasoning filters before persistence; otherwise withhold it.
 Neither raw deltas nor hidden reasoning belongs in logs. Keep current runtime/
 legacy-adapter repair owners and interfaces rather than build competing parsers,
-receipt stores or descriptor readers. Replacement writers still require genuine
-quiescence or enforceable authorized exclusion, as above.
+receipt stores or descriptor readers. Non-covered replacement writes retain the cleanup/exclusion boundary and valid
+scoped human exceptions; covered reversible local continuation/integration uses
+the default policy above without claiming that the old writer stopped.

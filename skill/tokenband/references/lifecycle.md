@@ -14,7 +14,7 @@ On upgrade, preserve existing active or unknown chats, scopes, owners and receip
 
 ### Continuing a stopped external task chat
 
-When an external task chat is known unavailable for its assignment — a known terminal provider/capability failure or a stopped route or model — the manager evaluates the permitted primary reserve for that assignment under [routing](routing.md), preserving any real action/permission denial rather than switching routes to evade it, and, when it is permitted, organizes one new separately linked internal task chat for the same task or its remaining scope. The continuation reuses the existing sole-TODO entry, owner/write-set and accepted dependencies rather than a second queue; it does not replay completed, accepted or unknown work, does not change the old chat's frozen provider or receipts, does not fork competing writes and does not take over another owner's live work. The new chat is a fresh execution unit with its own protected intent, ACK and persistence evidence, and the old-to-new link is recorded in the existing TODO; an unknown acknowledgement or crash still never triggers automatic recreation ([chats](chats.md)). Preserve the observation, recovery and non-replay limits in [operations](operations.md). When the reserve is not permitted or is itself unavailable, record the concrete blocker in the same TODO entry and continue only disjoint authorized work; this continuation rule alone creates no daemon, timer, second queue or self-wakeup guarantee. The separately configured [hourly manager check](#hourly-manager-recovery-check) can initiate the permitted assessment; it does not make blocked work resume by itself.
+When an external task chat is known unavailable for its assignment — a known terminal provider/capability failure or a stopped route or model — the manager evaluates the permitted primary reserve for that assignment under [routing](routing.md), preserving any real action/permission denial rather than switching routes to evade it, and, when it is permitted, organizes one new separately linked internal task chat for the same task or its remaining scope. The continuation reuses the existing sole-TODO entry, owner/write-set and accepted dependencies rather than a second queue; it does not replay completed, accepted or unknown work, does not change the old chat's frozen provider or receipts, does not fork competing writes and does not take over another owner's live work. The new chat is a fresh execution unit with its own protected intent, ACK and persistence evidence, and the old-to-new link is recorded in the existing TODO; an unknown acknowledgement or crash still never triggers automatic recreation ([chats](chats.md)). Unknown outcome or missing cleanup uses operations' default covered local policy, not automatic recreation/resending of that original chat/operation. Preserve the observation, recovery and non-replay limits in [operations](operations.md). When the reserve is not permitted or is itself unavailable, record the concrete blocker in the same TODO entry and continue only disjoint authorized work; this continuation rule alone creates no daemon, timer, second queue or self-wakeup guarantee. The separately configured [hourly manager check](#hourly-manager-recovery-check) can initiate the permitted assessment; it does not make blocked work resume by itself.
 
 Use applicable [assignment fields](../assets/assignment-template.md) once and [communication](communication.md) for actual accessible source inputs. Reconnaissance follows the template's source/relationship/freshness/unknown map; proposed checks are not executed checks. A scouting role alone grants no build/test authority; read-only reconnaissance expects zero write delta.
 
@@ -98,7 +98,7 @@ Identify exact reviewed source/result using the project's chosen mechanism. Vers
 
 ## Resume safely
 
-Store the [resume packet](../assets/resume-template.md) in existing plan/evidence and link it from TODO. On restart read TODO for current owner/status, reconcile the same task chat/assignment and operation receipts, check relevant freshness, then take the single next safe action. Preserve accepted decisions, input versions, open findings and late-result handling. Do not blindly relaunch an unknown operation or an alternative with ambiguous dispatch intent. Known-running confirmed progress follows normal observation; unfinished does not mean unknown.
+Store the [resume packet](../assets/resume-template.md) in existing plan/evidence and link it from TODO. On restart read TODO for current owner/status, reconcile the same task chat/assignment and operation receipts, check relevant freshness, then take the single next safe action. Preserve accepted decisions, input versions, open findings and late-result handling. Verify base and dependent versions before applying and integrating; a detected shift stops application for reconciliation. Late answers/edits are preserved separately and compared, never auto-overwriting an accepted result. Do not blindly relaunch an unknown operation or an alternative with ambiguous dispatch intent. Known-running confirmed progress follows normal observation; unfinished does not mean unknown. A checkpoint cannot declare termination or transfer write ownership; default covered reversible local continuation after uncertainty expiry or a trusted terminal is governed by [operations](operations.md), without a separate project risk acknowledgement or required exact terminal/cleanup proof.
 
 Persist a material accepted new or changed decision in the existing appropriate TODO, plan or evidence record before its first dependent action, with source/scope reference. Mark replaced decisions within the affected scope; preserve original evidence, unrelated standing decisions and existing consent/architecture/review gates.
 
@@ -106,7 +106,7 @@ Check the resume checkpoint for freshness at task completion or acceptance, mate
 
 Keep an unambiguous pointer from the existing TODO item to the applicable current checkpoint; retain replaced snapshots as history. Apply the existing Resume safely procedure after context compaction using relevant current inputs, without replaying operations, restarting workers or transferring owners.
 
-[Operations](operations.md) defines the limited fresh read-only continuation after 15 minutes of uncertainty, with separate linked assignment/dispatch intent, non-replay, isolation, original ownership/receipts, provider/top consent and restart reconciliation. A checkpoint cannot declare termination or transfer write ownership. Shared integration requires the operations boundary, not only a matching snapshot.
+[Operations](operations.md) defines default continuation of covered reversible local work after at most 15 minutes of uncertainty, with a new linked remaining-work assignment, preserved original ownership/receipts, non-replay, actual controls and manager reconciliation/integration. Exact terminal/cleanup and separate project activation are not prerequisites for that covered policy. Its finite text-only alternative remains distinct. A checkpoint cannot declare termination or transfer the original operation's ownership. Non-covered integration and manager handoff retain the operations cleanup/exclusion boundary; a matching snapshot proves no physical exclusion.
 
 Archive only fully completed queue entries with dates/evidence and corrected links. Retain active, paused, blocked, partial or disputed work. Preserve history. Product-specific tests, audience rules, infrastructure/deployment grants and run-volume consent stay in the folder and can strengthen common controls.
 
@@ -125,7 +125,10 @@ the [current assignment routing and scoped human exceptions](routing.md#apply-ro
 current sole-TODO allocation, current owner, bounded scope/write-set or read-only
 boundary, accepted prerequisites, exact intended recipient and logical dispatch
 reservation. Missing, stale, conflicting or unknown allocation, owner, target or
-prior outcome means **NO SEND**. Briefs, plans and technical receipts cannot
+prior outcome means **NO SEND** for that unbound/unknown operation. A new
+covered local remaining-work unit must have its own known recipient, current
+allocation and admission under operations; the old unknown receipt is not
+erased or reused to qualify it. Briefs, plans and technical receipts cannot
 replace that pre-send reservation. Use ordinary text in the existing TODO entry,
 not another queue, schema or state engine.
 
@@ -158,8 +161,11 @@ Unknown live-owner identity/status or earlier request outcome means **NO SEND to
 that target until trusted exact reconciliation**. Preserve owners, pauses/Stop,
 accepted prerequisites and original receipts. A new invocation ID, provider or
 output path never permits replay, a duplicate task chat/worker or takeover.
-[Operations](operations.md) retains its finite separately authorized isolated
-read-only alternative, not a retry or transfer of original write ownership.
+This NO SEND preserves the original unknown target/operation; it does not forbid
+a separately admitted remaining-work unit under [operations](operations.md)
+default covered local continuation after its non-resetting deadline. The finite
+text-only alternative remains separate. Neither replays the original operation
+or transfers its ownership; covered local integration uses manager reconciliation.
 Delivery, response, task completion and manager acceptance remain separate;
 backend persistence needs separate human GUI confirmation for a visibility claim.
 READY, a plan or internal subagent is not executing visible sprint work.

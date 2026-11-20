@@ -15,15 +15,55 @@ worker.py init` creates an empty template in `WORKFLOW_HOME`, otherwise
 Use the [portable setup chain](#portable-setup-chain), [modes](#modes-and-model-pool)
 and [paths](paths.md) for role choices, anchored references and pinned runtime discovery.
 
-The orchestrator resolves from trusted current settings: primary provider family, ordinary orchestrator, top primary, reserve primary, main external executor, eligible external alternatives, exact model/effort, supported transport and mode. Infer only known capabilities; catalogs do not prove access. Ask about missing material choices during ordinary first use. Honor a scoped instruction to decide autonomously by recording assumptions instead of waiting for questions. On later use, ask only about missing/changed choices or requested reconfiguration. Resolve the human's language from conversation or an explicit preference; all workflow communication follows that resolved language per [communication](communication.md). Set human_language to "auto" to follow the conversation's detected human language, or to an explicit human language code (for example a BCP-47 tag such as "en", "ru", "zh-Hans", "ar" or "pt-BR"); an explicit human preference wins over detection, and no language is privileged. Human-facing text (including mode labels) is shown in the human's language; internal instructions, briefs, handoffs and reports use the same resolved language per [communication](communication.md). The optional legacy internal_language field remains accepted for configuration compatibility and does not impose a workflow language; omit it in new configurations.
+The orchestrator resolves from trusted current settings: primary provider family, ordinary orchestrator, top primary, reserve primary, main external executor, eligible external alternatives, exact model/effort, supported transport and mode. Infer only known capabilities; catalogs do not prove access. Follow the conversation-based setup rules in [Setup in the conversation](#setup-in-the-conversation) instead of requiring a menu, wizard or questionnaire. Resolve the human's language from conversation or an explicit preference; all workflow communication follows that resolved language per [communication](communication.md). Set human_language to "auto" to follow the conversation's detected human language, or to an explicit human language code (for example a BCP-47 tag such as "en", "ru", "zh-Hans", "ar" or "pt-BR"); an explicit human preference wins over detection, and no language is privileged. Human-facing text (including mode labels) is shown in the human's language; internal instructions, briefs, handoffs and reports use the same resolved language per [communication](communication.md). The optional legacy internal_language field remains accepted for configuration compatibility and does not impose a workflow language; omit it in new configurations.
+
+### Setup in the conversation
+
+Use the existing conversation; do not require a setup menu, a fixed questionnaire
+or a separate wizard. If current trusted settings cover the original task,
+continue that authorized task under the normal lifecycle without another setup
+interview or initialization. Installation or discovery alone starts no work.
+
+- Ask only about unresolved material choices or a requested change. Reuse the
+  known language, mode, roles, exact model/effort, selected connection and
+  bound protected consent; infer capability needs from the task. Group genuinely
+  missing choices into one short question or form, offering known applicable
+  choices in the human's language instead of asking the human to reconstruct
+  configuration fields.
+- For an explicit instruction such as "set it up for me", choose within the
+  existing allowed pool and current scope, recording material assumptions. Do
+  not ask the human to select automatic setup again or require a second technical
+  acknowledgement for already-authorized setup. Missing applicable permission,
+  an unknown material choice or an actual blocker still needs its specific
+  resolution; autonomy creates no grant, model, endpoint or capability. Preserve
+  saved modes and the neutral template; do not silently change routing defaults.
+- For a targeted change, touch only that choice and its necessary dependencies;
+  explain affected choices. Recalculate only unapplied dependent proposals.
+  Preserve unrelated settings, current owners and frozen active/unknown operations
+  under [paths](paths.md) and [operations](operations.md); never replay a send.
+- On "back", return to the previous applicable question. "I do not know" uses
+  the same trusted suggestions without granting consent; "finish automatically"
+  continues from the answers already given. On postponement, leave a concise
+  checkpoint; resume from current facts and ask only what remains. Do not
+  automatically undo already-applied or another owner's work.
+- After requested setup, show a short human-facing result under
+  [communication](communication.md): selected mode and participants, actual
+  scoped changes, checks performed, what is still unknown or blocked, and the
+  next action. Preparation, local prerequisites and real route/tool/persistence
+  evidence are distinct. A missing mandatory independent reviewer is a concrete
+  blocker, not complete readiness. Continue the original authorized task when
+  its prerequisites are met; do not finish merely at a configuration file or
+  require the human to repeat the task.
 
 Keep every trusted named role choice and authorized external candidate in the setup record, including alternatives whose connection details are still pending; do not silently reduce the pool to its main executor. Materialize validated profiles only when their required metadata is known. Recording a user-identified top model in settings is not invoking it; scoped consent gates every actual top-model launch, not the storage of that role choice. Setup records are not a consent store: discover and bind the applicable trusted grant from protected user evidence before dispatch per [routing](routing.md#discover-and-bind-trusted-consent-before-dispatch).
 
 User configuration is shared across folders. Host adapters are user-specific records with dynamically resolved interpreter/script references, pinned script SHA256 and platform identity. Each adapter must preserve actual parent permissions and owned kernel cleanup. Never store keys, key values, prompts, project names or project task queues in role configuration. Existing native registries retain provider authorization and protected key resolution. Adding a provider to an eligible pool requires its actual authorization; having a key is insufficient.
 
-For each missing connection, ask for the provider ID, exact model/effort, API
-base URL and supported protocol, registered native provider ID, and a protected
-credential reference. Ask where the key is stored or which environment variable
+For the selected connection, resolve only its genuinely missing required
+metadata: provider ID, exact model/effort, API base URL and supported protocol,
+native_provider metadata and a protected credential reference. Ask the human
+only for what trusted inputs cannot resolve; native registration is required
+only when the selected native route needs it. Ask where the key is stored or which environment variable
 contains it; never ask the human to paste a key into this chat. Reuse trusted
 existing connection declarations. Keep connection metadata outside the skill.
 An API endpoint cannot be inferred from a model's display name. Record text and
@@ -87,6 +127,10 @@ Follow this chain once per selected provider/route. Reuse each resolved input:
 | Codex native | `transport: "native-chat"`, `adapter: null`, `chat: {"driver": "demo-codex", "native_provider": "demo-native"}` with the ACTUAL selected native ID. `drivers.demo-codex` supplies the reviewed runtime binding above, `kind: "codex"`, separate `native_base_url`/`native_wire_api` pins and actual integration/auth/executable dependencies. The implemented binding currently accepts `version: "0.160.0"` / `protocol: "codex-0.160"`, native wire `"responses"`, and `connection: "auto"`, `"shared-unix"` or `"owned-stdio"`; a version label alone proves no compatibility. See [Codex](host-codex.md). |
 | Claude native | The same native profile shape selects a reviewed `kind: "claude-code"` driver, compatible pinned runtime, `protocol: "claude-restricted-print"`, `connection: "owned-stdio"` and protected `settings`/`settings_sha256`. This implemented route is persistent restricted-print text, without file/shell tools, live steering or background survival. Its evidence rules remain in [Claude](host-claude.md); Codex evidence does not qualify it. |
 | Separate corrected companion | Select only its reviewed external adapter/config pair and separately delivered inventory under [Step recovery](step-recovery.md#selecting-the-installed-correction). It is an optional alternative mechanism, not a dependency of built-in Responses or a native driver. |
+
+For Kimi Code, see [skill discovery and the native boundary](host-kimi.md).
+Loading the skill is distinct from the routes above; no bundled Kimi-native
+driver or task-local driver configuration is supplied.
 
 These are field relationships with fictional demo IDs, not a complete runnable
 config or authorization. Resolve actual endpoints and references outside the

@@ -31,8 +31,10 @@ actual task and managing-chat IDs. [Communication](communication.md) governs
 internal/human language; independent task scopes may proceed with disjoint ownership.
 
 Use the configured host driver and its real protocol: [Codex native
-sessions](host-codex.md) or [Claude native sessions](host-claude.md). Other hosts
-need an implemented, qualified driver. A manager in one framework may invoke
+sessions](host-codex.md) or [Claude native sessions](host-claude.md). For Kimi Code,
+read [skill discovery and the native boundary](host-kimi.md); there is no bundled
+Kimi-native driver. Other native routes need an implemented, qualified driver.
+A manager in one framework may invoke
 another host's qualified driver; this does not make their APIs interchangeable.
 Check persistence, tools, exact-session continuation, permissions and execution
 lifetime separately. Runtime presence and requested model flags are insufficient.

@@ -375,6 +375,12 @@ class CodexDriver:
             # owned/unbound/cached-without-handle fails closed before any constructor.
             w.fail("native_reconciliation_required",
                    "Retained accepted/unknown/live operation lacks an exact live owner; reconcile before opening any new transport.")
+        # The current cleanup receipt describes only the PREVIOUS connection and must
+        # never be read as the state of the transport opened below. Invalidate it before
+        # any new transport exists; a failed atomic write blocks this launch instead of
+        # carrying an old empty:true proof into the new connection.
+        journal.update(cleanup=None, owner_cleanup="unknown",
+                       execution_lifetime="daemon" if self.chosen == "shared-unix" else "foreground")
         if self.chosen == "shared-unix":
             transport = UnixWebSocket(self.shared_socket, expected_hash=self.spec["sha256"])
         else:
@@ -393,13 +399,22 @@ class CodexDriver:
             return rpc
         except BaseException:
             if rpc is None:
-                # initialize itself can fail after a child exists. It has the
-                # same cleanup obligation as every later protocol failure.
+                # initialize itself can fail after a child exists. It has the same
+                # cleanup obligation as every later protocol failure: attempt the real
+                # close, never present a previous proof as current, keep the original
+                # failure, and never let a secondary journal error fake a PASS.
                 try:
-                    journal.update(cleanup=transport.close(), execution_lifetime="daemon" if transport.shared else "foreground")
+                    proof = transport.close()
                 except BaseException:
-                    journal.update(owner_cleanup="unknown")
+                    try:
+                        journal.update(cleanup=None, owner_cleanup="unknown",
+                                       execution_lifetime="daemon" if transport.shared else "foreground")
+                    except BaseException:
+                        pass
                     raise
+                journal.update(cleanup=proof,
+                               owner_cleanup=proof.get("kind") if isinstance(proof, dict) else "unknown",
+                               execution_lifetime="daemon" if transport.shared else "foreground")
             else:
                 self._close(rpc, journal)
             raise
@@ -466,8 +481,25 @@ class CodexDriver:
                 w.fail("native_sandbox_unready", "Native Windows sandbox is not ready; no automatic installation/elevation.")
 
     def _close(self, rpc, journal):
-        proof = rpc.close()
-        journal.update(cleanup=proof, execution_lifetime="daemon" if rpc.transport.shared else "foreground")
+        shared = bool(getattr(rpc.transport, "shared", False))
+        lifetime = "daemon" if shared else "foreground"
+        try:
+            proof = rpc.close()
+        except BaseException:
+            # A failed real close must never leave the previous connection's empty:true
+            # proof as the current state. Record the uncertainty; a secondary journal
+            # failure cannot turn this into a success or leak a raw secret message.
+            try:
+                journal.update(cleanup=None, owner_cleanup="unknown", execution_lifetime=lifetime)
+            except BaseException:
+                pass
+            raise
+        # The real close succeeded: persist THIS connection's proof. A persistence
+        # failure is not a successful close and must propagate; Journal._io_failed
+        # already blocks later effects. The previous owner_cleanup=unknown is not
+        # carried forward as a claim about this connection.
+        kind = proof.get("kind") if isinstance(proof, dict) else "unknown"
+        journal.update(cleanup=proof, owner_cleanup=kind, execution_lifetime=lifetime)
         if journal.guard:
             journal.guard()
 

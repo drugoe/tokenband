@@ -28,6 +28,7 @@ incompatible permission/sandbox fields. Approval requests without the authorized
 handler remain blocked. A shared daemon owns its server and accepted work;
 close only your connection. An owned server requires verified process ownership
 and cleanup, and its owner must stay alive through the active turn.
+An exact turn terminal (completed/failed/interrupted) does not prove response completeness, cleanup or write transfer. A shared close stays shared_connection_only and is never recorded as an empty:true kernel proof; owned foreground close supplies genuine kernel cleanup evidence. Covered reversible local replacement and integration follow the default policy in [operations](operations.md), without separate project activation or required terminal/cleanup proof. Non-covered effects retain their cleanup/exclusion gate and applicable scoped human exceptions; a connection snapshot is not physical exclusion. UNKNOWN cleanup is not PASS and never proves the previous writer stopped.
 
 ## Ограниченное наблюдение exact turn на существующем соединении
 

@@ -48,7 +48,7 @@ _INVALID_OPTIONAL_NUMBER = object()
 TEXT_INACTIVITY_TIMEOUT = 300
 ANCHORS = {"workflow_home", "skill", "config", "home"}
 RUNTIME_ID_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,127}\Z")
-NATIVE_MANIFEST_PIN = "f7115e151dd286861637cf55b4e70feb32b088d068817aa16bfd5cdb7ca1f184"
+NATIVE_MANIFEST_PIN = "f8a280713a71ccdf4dc8e3373987a6b01a77d9e99c11c2ac92ce6ad38c260bf9"
 
 
 def native_module():

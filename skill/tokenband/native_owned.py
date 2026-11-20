@@ -152,9 +152,17 @@ def main():
         return 70
     owner = WindowsOwner() if os.name == "nt" else LinuxOwner()
     process = None
+    # On the existing non-nt owned launcher the FIRST SIGTERM still breaks the child
+    # wait into the single finally cleanup path; a REPEATED SIGTERM during that bounded
+    # owner.stop + nonce-bound receipt write is ignored. SIGKILL/host crash/receipt
+    # failure are not caught here and may leave UNKNOWN.
+    term_state = {"cleaning": False}
     try:
         if os.name != "nt":
             def stopped(signum, frame):
+                if term_state["cleaning"]:
+                    return
+                term_state["cleaning"] = True
                 raise InterruptedError()
             signal.signal(signal.SIGTERM, stopped)
         process = subprocess.Popen(spec["argv"], cwd=spec["cwd"], stdin=sys.stdin.buffer,
@@ -165,6 +173,8 @@ def main():
         pass
     finally:
         if process is not None:
+            if os.name != "nt":
+                term_state["cleaning"] = True
             proof = owner.stop(process)
             receipt = {"nonce": spec["nonce"], "owner_pid": os.getpid(), "proof": proof}
             target = Path(spec["receipt"])
