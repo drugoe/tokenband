@@ -36,15 +36,15 @@ Do not substitute cron, a system scheduler or custom service. Existing unknown
 operations and real task permission/ownership limits remain subject to
 [operations](operations.md); skipping setup does not resolve or bypass them.
 
-Before any scheduled action, verify this exact chat is still the sole active
-manager and reconcile previous active/queued/unknown checks. A scheduled prompt
+Before any scheduled action, verify this exact chat is still the active manager
+for its recorded scopes and reconcile previous active/queued/unknown checks. A scheduled prompt
 is not enduring authority for a former manager. Reporting findings and actions
 uses the resolved human language in this same manager chat.
 
 When the active manager has a verified built-in same-chat hourly schedule under
 [host-codex](host-codex.md#built-in-same-chat-hourly-manager-schedule), each scheduled
 turn is an ordinary manager turn, not a new dispatcher or second queue: it re-reads the
-sole TODO and current ownership, then reviews the project's unfinished task chats.
+sole TODO and current ownership, then reviews unfinished task chats assigned to its recorded scopes, not another manager's tasks.
 Unfinished is not the same as an abnormal stop. From trusted exact TODO/turn/results,
 distinguish a task that is DONE, awaiting QA, in progress, waiting on an accepted
 dependency, deliberately paused, or ended by an explicit Stop, from one whose
@@ -57,14 +57,14 @@ The hourly cadence does not replace existing live progress/silence handling in
 On a confirmed abnormal stop of an unfinished task, resume only within that task's same
 scope and existing TODO entry: continue the SAME task chat when a supported route permits
 it, apply a supported root-cause fix, or hand the remaining scope to an eligible internal
-reserve under [continuing a stopped external task chat](#continuing-a-stopped-external-task-chat) and [routing](routing.md). This transfers the remaining task, not project management. Do not duplicate a write, widen policy or permission, replay completed/accepted/unknown work, or take over another owner's live work; preserve unknown effects, live write owners, quotas, denials and non-replay. A real blocker or a needed but un-issued authority is reported concretely here with the last actual check and smallest next action, without endless retry. A manager handoff is a separate operation under [manager succession and handoff](chats.md#manager-succession-and-handoff). On that handoff, pausing or deleting the schedule's future runs does not by itself prove an already queued or accepted callback is terminated; before the new manager's own schedule acts, establish quiescence or an enforceable exclusion and reconcile unknown owners under [operations](operations.md), so no two recovering managers run at once.
+reserve under [continuing a stopped external task chat](#continuing-a-stopped-external-task-chat) and [routing](routing.md). This transfers the remaining task, not project management. Do not duplicate a write, widen policy or permission, replay completed/accepted/unknown work, or take over another owner's live work; preserve unknown effects, live write owners, quotas, denials and non-replay. A real blocker or a needed but un-issued authority is reported concretely here with the last actual check and smallest next action, without endless retry. A manager handoff is a separate operation under [manager succession and handoff](chats.md#manager-succession-and-handoff). On that handoff, pausing or deleting the schedule's future runs does not by itself prove an already queued or accepted callback is terminated; before the new manager's own schedule acts, establish quiescence or an enforceable exclusion and reconcile unknown owners under [operations](operations.md), so no two recovering managers issue conflicting actions for the transferred scope. A manager retaining other scopes continues only their permitted checks; one same-chat schedule covers its recorded scopes, not one schedule per scope.
 
 Every scheduled send still passes [allocate and reserve before dispatch](#allocate-and-reserve-before-dispatch); a timer, plan or READY is not an executing turn, and a manual smoke check is not a timed run. The durable generic prompt below is the reusable instruction the schedule carries each hour; render and act on it in the resolved human language per [communication](communication.md).
 
 ```text
 Use TokenBand's Hourly manager recovery check for this project. First verify that
-this exact chat is still its sole active manager. Re-read the current sole TODO,
-checkpoints and exact operation receipts. Inspect unfinished task chats and
+this exact chat is still an active manager for its recorded scopes. Re-read the current sole TODO,
+checkpoints and exact operation receipts. Inspect unfinished task chats assigned to your scopes and
 apply the canonical recovery rules to any confirmed abnormal stop or premature
 incomplete result, preserving completed work, live/unknown owners, pauses, Stop,
 actual controls and EVERY-send admission. Report significant findings, actions,
@@ -201,7 +201,7 @@ conversation for acceptance.
 
 ## Task-chat cessation report
 
-Before a task chat deliberately ceases active work on its assignment or enters a managed wait, it must leave a short state report for the current sole manager. Abrupt failures and explicit human Stop follow the exceptions below. This rule applies to the existing execution flow and creates no new dispatcher, daemon or callback engine.
+Before a task chat deliberately ceases active work on its assignment or enters a managed wait, it must leave a short state report for the exact current manager bound to this task and scope. Abrupt failures and explicit human Stop follow the exceptions below. This rule applies to the existing execution flow and creates no new dispatcher, daemon or callback engine.
 
 - **Managed stop or wait** — assigned work completed and ready for review, acceptance reached, blocked, waiting on a dependency or human decision, authorized pause or deliberate handover — requires this short report before the chat ceases active work.
 - **Crash, route failure or abrupt interruption** — the report is best-effort and is not guaranteed to be sent. The manager records the missing expected report for the exact known task/turn as unknown; missing delivery alone proves neither a stop nor completion.
@@ -212,7 +212,7 @@ state/reason; what was completed and actually checked within the assigned scope;
 
 State labels stay separate: report ready, delivery acknowledged, manager observed and manager accepted are distinct facts. A transport acknowledgement is not the manager reading the report. DONE claims only completed scope and still require independent acceptance; BLOCKED and WAIT are never disguised as DONE.
 
-Save the report in the same task chat and existing evidence/TODO binding. Notify the exact current sole manager only through a supported, permitted mechanism bound by the assignment; direct sending is not an invented capability. If no route or delivery exists, record the report as unconfirmed/pending and leave the manager to retrieve it on the next opportunity; a missing route does not justify holding authorized work indefinitely or weakening controls. Do not create mutual notification obligations on acknowledgement.
+Save the report in the same task chat and existing evidence/TODO binding. Notify the exact current manager bound to this task and scope only through a supported, permitted mechanism bound by the assignment; direct sending is not an invented capability. If no route or delivery exists, record the report as unconfirmed/pending and leave the manager to retrieve it on the next opportunity; a missing route does not justify holding authorized work indefinitely or weakening controls. Do not create mutual notification obligations on acknowledgement.
 
 An initializer, ordinary ACK or routine progress is not a cessation; this rule is not invoked for every tool call or short pause. For a managed contextual handover, preserve continuation and bind the exact return route in the assignment. Before any notification, respect current manager ownership, non-replay, EVERY-send admission and handoff state; never send to a former manager after handoff. No automatic manager wakeup or delivery guarantee exists for a crash; the existing hourly check acts only when a supported mechanism is present.
 
