@@ -4,9 +4,9 @@
 
 Keep project work organised, resumable and independently checked. TokenBand gives AI agents a shared task list, a dedicated chat for each substantial task, and a clear process for reviewing and accepting results.
 
-**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.13-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
+**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.14-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
 
-**0.6.13** · **Experimental** · [**MIT**](LICENSE)
+**0.6.14** · **Experimental** · [**MIT**](LICENSE)
 
 ## What you get
 
@@ -19,7 +19,7 @@ Simple factual answers and meaning-preserving mechanical corrections stay direct
 
 ## Latest update
 
-Version 0.6.13 includes visible milestone results, a shorter setup conversation, cleanup fixes and Kimi Code discovery notes. For already authorized reversible local work, the manager continues after at most 15 minutes of uncertainty without separate project activation or terminal/cleanup proof, using a separate working copy when earlier writes remain possible and reconciling changes before integration. This does not guarantee process termination, physical isolation or real-time wakeup, and never removes Stop, actual denials, consent or external-effect gates. See [release notes](docs/releases/0.6.13.md).
+TokenBand 0.6.14 shows task state in chat titles with 🟡 for queued work, ⚙️ after confirmed start, and ✅ after acceptance in the project TODO. See [release notes](docs/releases/0.6.14.md).
 
 ## How it fits
 

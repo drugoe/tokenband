@@ -6,8 +6,8 @@
 
 Download the public installation archive:
 
-- [tokenband-0.6.13-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.13-skill.zip)
-- SHA-256: `f3c08962d805484f767b89cf4260c96d4a89b1b8afc0f809522d35652180f36a`
+- [tokenband-0.6.14-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.14-skill.zip)
+- SHA-256: `f65f475e23df5bfda7315ddde9ec7dd802bf417f6dfc585d8be43d080ef077c6`
 
 The ZIP contains the plain skill package: `SKILL.md`, reference documents, templates and an optional Python worker. It is an instruction set, not a finished configured environment.
 

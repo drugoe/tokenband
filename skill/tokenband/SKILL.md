@@ -3,9 +3,9 @@ name: tokenband
 description: TokenBand (tb) coordinates folder-owned tasks and sprint stages through persistent task chats led by a configured executor and independent reviewer roles to conserve primary-model limits. Use for budget-conscious workflow setup, delegated development, research or content production, and explicitly requested managing/task chat creation or new-host setup; ordinary standalone answers need no team.
 license: MIT
 metadata:
-  version: "0.6.13"
+  version: "0.6.14"
   maturity: "experimental"
-  candidate_revision: "20261121.3"
+  candidate_revision: "20261126.1"
   release_state: "local_experimental_release"
 ---
 
