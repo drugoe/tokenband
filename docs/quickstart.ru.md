@@ -4,9 +4,9 @@
 
 ## 1. Скачайте пакет
 
-[Скачать tokenband-0.6.14-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.14-skill.zip)
+[Скачать tokenband-0.6.15-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.15-skill.zip)
 
-SHA-256: `f65f475e23df5bfda7315ddde9ec7dd802bf417f6dfc585d8be43d080ef077c6`
+SHA-256: `bcf4d3cc8489eb0c8f25d3c90f4a3ea76701d69ef7d47ec784037f6f6a083736`
 
 Архив содержит папку `tokenband`: `SKILL.md`, справочные документы, шаблоны и вспомогательные Python-модули. Это пакет инструкций, а не уже настроенная среда.
 
