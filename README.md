@@ -4,9 +4,9 @@
 
 Keep project work organised, resumable and independently checked. TokenBand gives AI agents a shared task list, a dedicated chat for each substantial task, and a clear process for reviewing and accepting results.
 
-**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.15-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
+**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.16-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
 
-**0.6.15** · **Experimental** · [**MIT**](LICENSE)
+**0.6.16** · **Experimental** · [**MIT**](LICENSE)
 
 ## What you get
 
@@ -19,7 +19,7 @@ Simple factual answers and meaning-preserving mechanical corrections stay direct
 
 ## Latest update
 
-TokenBand 0.6.15 shows task state in chat titles with 🟡 for queued work, ⚙️ after confirmed start, ✔️ after acceptance, 🙋 for a human decision, 💤 for a task dependency, ⏳ for other waiting, and ⏸️ for a confirmed pause. See [release notes](docs/releases/0.6.15.md).
+TokenBand 0.6.16 shows task state in chat titles with 🟡 for queued work, ⚙️ after confirmed start, ✔️ after acceptance, 🙋 for a human decision, 💤 for a task dependency, ⏳ for other waiting, ⏸️ for a confirmed pause, ❌ for explicit human cancellation, and 🚫 for authorized cancellation when the task is no longer needed. See [release notes](docs/releases/0.6.16.md).
 
 ## How it fits
 
