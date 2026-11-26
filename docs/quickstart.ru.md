@@ -6,7 +6,7 @@
 
 [Скачать tokenband-0.6.13-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.13-skill.zip)
 
-SHA-256: `6abe749b70f2741a3d04b66c558da0b92da62bf0a9c5be69e5b55e6ba9b17495`
+SHA-256: `f3c08962d805484f767b89cf4260c96d4a89b1b8afc0f809522d35652180f36a`
 
 Архив содержит папку `tokenband`: `SKILL.md`, справочные документы, шаблоны и вспомогательные Python-модули. Это пакет инструкций, а не уже настроенная среда.
 

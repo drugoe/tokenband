@@ -82,6 +82,8 @@ Continue independent authorized work when a particular action remains blocked.
 6. Track each finding's ID, risk/trigger, evidence, disposition, fix/refutation and recheck. Deduplicate defects without dropping claims. Recheck affected delta and neighboring invariants; reuse valid checks on unchanged relevant inputs and widen only for real scope/risk/change. Failed reviewer launches, missing evidence and unknowns cannot become clean acceptance.
 7. Managing chat accepts only after the required [review gate](routing.md), updates TODO and releases ownership. Executor DONE is not acceptance. A finished child does not close an unfinished parent; sprint acceptance includes combined checks/demonstration when relevant.
 
+Task titles display the explicit state in the owning TODO. The owning manager uses the [task title procedure](chats.md#managing-titles-and-intake) for the exact owned task chat. Use `🟡` (U+1F7E1) for queued work with a chat, including a newly created chat for a queued or reserved task awaiting confirmed substantive start. For a queue entry without a chat, record the state in TODO only. The title rule never creates a chat. On explicit reopening of a previously accepted task awaiting dispatch, record it as queued in the owning TODO and apply `🟡` to the same chat. After the manager observes a matching substantive work-start ACK for the exact task chat and records in-progress in TODO, apply `⚙️` (U+2699 U+FE0F). An initializer, READY or delivery ACK alone cannot establish substantive start. After recording actual accepted-complete in the owning TODO, apply `✅` (U+2705) in the same closing manager turn before reporting closure. A single completed turn, an old executor DONE, pending checks, archiving or cancellation alone cannot trigger a title transition. Preserve paused, blocked, unknown and cancelled states without automatically assigning a queued or completed icon. If a required title update cannot be safely confirmed, preserve the recorded TODO state, record the concrete pending or uncertain title outcome in the existing TODO or its linked evidence, and report and reconcile only the title effect. This task-title rule adds no scheduler or status registry.
+
 
 Keep the authorized goal distinct from an individual invocation. After a failed,
 incomplete, unusable or unknown result, assess the current TODO and receipts for
@@ -168,7 +170,9 @@ text-only alternative remains separate. Neither replays the original operation
 or transfers its ownership; covered local integration uses manager reconciliation.
 Delivery, response, task completion and manager acceptance remain separate;
 backend persistence needs separate human GUI confirmation for a visibility claim.
-READY, a plan or internal subagent is not executing visible sprint work.
+READY, a plan or internal subagent is not executing visible sprint work. Apply
+the [in-progress title rule](#engineering-and-acceptance) when recording a
+confirmed substantive start.
 
 Concrete missing capability blocks only its dependent action. Continue disjoint
 already-authorized preparation; do not stop merely at metadata. A scoped reserve
