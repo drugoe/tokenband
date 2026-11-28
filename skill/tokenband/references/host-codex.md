@@ -232,36 +232,26 @@ work directory names it explicitly. This variant is expressible in the pinned
 schema (`cwd`, `runtimeWorkspaceRoots` with absolute paths) but it is not an
 attested GUI outcome and it adds no native grouping.
 
-## Built-in same-chat hourly manager schedule
+<a id="built-in-same-chat-hourly-manager-schedule"></a>
+## Codex manager work without a schedule
 
-[Lifecycle](lifecycle.md#hourly-manager-recovery-check) owns the required hourly
-check at active manager creation/adoption. Use the Codex app's supported built-in
-schedule that continues the SAME manager chat. No cron, system scheduler or
-separate service is part of this mechanism.
+[Lifecycle](lifecycle.md#manager-state-check-without-automation) owns manager
+state checks. At creation/adoption/continuation, do not discover or invoke
+`automation_update` or any other automation/schedule tool to create, update,
+resume, retarget or use a periodic manager schedule or reusable hourly prompt,
+and do not require a timer. Use no cron, system scheduler, separate service,
+files, TOML or raw RPC as a substitute. Checks occur only in actual authorized
+working turns; installation/adoption/continuation creates no schedule or setup
+follow-up and no self-wakeup promise. Unavailable automation neither blocks work
+nor establishes that Codex lacks the feature.
 
-The [official automations documentation](https://learn.chatgpt.com/docs/automations?surface=app)
-describes scheduled continuation of an existing chat, use of skills, the absence
-of schedule-management UI in the CLI, and the requirement to keep the computer
-and app running for local project work. Product support does not establish this
-session's tool exposure, an actual registered schedule or a successful run.
-
-Discover the actual built-in automation/schedule tool, including
-`automation_update` where exposed. Use its actual schema to bind the existing
-manager chat, one-hour cadence and applicable timezone; invent no tool fields.
-Use the selected host's supported serialization when a previous check is busy;
-reconcile active, queued or unknown operations before another recovery action.
-Scheduling uses the host's effective background controls, which must be checked
-separately from foreground permissions and may be narrower. A schedule does not
-widen grants or controls. Pages/Sites schedules target a different product and
-do not register a native Codex manager chat.
-
-Follow [setup](setup.md#built-in-schedule-setup) for exact intent, ACK, readback
-and unavailable-host handling. Distinguish configured from run-verified: an observed
-hourly run and its effect are separate evidence; a manual check is not a timed
-run. If the supported tool is unavailable, skip this automation and briefly record
-the reason; project work continues without a setup dependency or waiting. Do not
-assert that Codex lacks the feature or register it through files/TOML/raw RPC.
-Installation of the skill alone creates no schedule.
+This changes no existing automation. Editing the skill does not disable or delete
+a timer. A separately authorized action on an exact pre-existing manager timer
+must use the Codex host's actual supported route/schema and preserve exact chat
+and timer identity, future/queued/accepted callbacks and active/unknown receipts
+without replay; lack of that route or authority remains a concrete blocker. A
+Pages/Sites schedule is a different target and confers no authority over a native
+manager chat. Leave all other user automations untouched.
 
 ## Existing shared-daemon route
 

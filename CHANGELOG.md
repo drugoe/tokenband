@@ -1,3 +1,27 @@
+# TokenBand 0.6.20 — experimental
+
+Cumulative release, revision **20261128.4**. / Накопленный выпуск, ревизия **20261128.4**.
+
+[Download / Скачать tokenband-0.6.20-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.20-skill.zip) · [Release notes / Описание выпуска](docs/releases/0.6.20.md)  
+SHA-256: `7f565174b551e551b7f82306ec323872825edd82782175087bed1bbb270cca25`  
+Archive / Архив: 34 entries under `tokenband/` / 34 элемента в `tokenband/`.
+
+**English**
+
+- Combines the 0.6.17–0.6.20 instruction updates. Managers check state and continue useful authorized work only in actual working turns, with finite observation, result intake, applicable independent gates and ready successors. No periodic manager schedule, self-wakeup, timer, daemon, endless polling or acknowledgement loop is created; editing instructions does not delete an existing timer.
+- Active standalone work displays `0`, standalone task titles retain full `0.<task>` numbers, and historical `00` stays distinct. Each managed chat applies its confirmed own icon in an authorized turn. A readiness initializer is not a work grant, and author DONE is not acceptance.
+- `⭐` immediately before `MANAGER` marks only the verified chief among several active managers. `✅` means accepted success. `☑️` means authorized terminal closure without success or a separate explicit archive display; it proves neither acceptance nor a host archive action. Temporary Stop, pause, wait and UNKNOWN are not terminal.
+- An active manager always keeps leading `🧑‍💼`; its own blocking wait follows as a second icon before any applicable archive `☑️`, for example `🧑‍💼 💤 0,00,8 / ⭐ MANAGER — Description`. Actual blocking waits use `🙋` for a human, `💤` for another chat or delegated model, and `⏳` for tool/network-only waits, in that precedence; useful non-blocking work continues. The own-wait icon hides any subordinate-question segment without resolving its recorded reason, and task-chat state and wait icons are unchanged. Stop, the 900-second recovery boundary, owners, actual denials, UNKNOWN and non-replay protections remain.
+- Bundled worker, native and Python code and runtime requirements are unchanged from 0.6.16. Existing host limitations apply; no separate intermediate-version downloads are introduced.
+
+**Русский**
+
+- Объединены изменения инструкций 0.6.17–0.6.20. Менеджер проверяет состояние и продолжает полезную разрешённую работу только в фактических рабочих ходах: конечное наблюдение, приём результата, применимые независимые проверки и готовые следующие задачи. Периодическое расписание менеджера, самопробуждение, таймер, демон, бесконечный опрос и цикл подтверждений не создаются; изменение инструкций не удаляет существующий таймер.
+- Активная автономная работа отображается как `0`, заголовки автономных задач сохраняют полные номера `0.<task>`, а историческое `00` остаётся отдельным. Каждый управляемый чат применяет подтверждённую собственную иконку в разрешённом ходе. Инициализатор готовности не является разрешением на работу, а DONE автора не равен приёмке.
+- `⭐` непосредственно перед `MANAGER` обозначает только подтверждённого главного менеджера среди нескольких активных. `✅` означает принятый успешный результат. `☑️` — согласованное окончательное закрытие без успеха либо отдельное явное архивное отображение; иконка не доказывает ни приёмку, ни архивное действие приложения. Временный Stop, пауза, ожидание и UNKNOWN не являются окончательным закрытием.
+- Активный менеджер всегда сохраняет ведущий `🧑‍💼`; его собственное блокирующее ожидание следует второй иконкой перед любым применимым архивным `☑️`, например `🧑‍💼 💤 0,00,8 / ⭐ MANAGER — Описание`. Фактическое блокирующее ожидание обозначается `🙋` для человека, `💤` для другого чата или делегированной модели и `⏳` для ожидания только инструмента или сети, с таким приоритетом; полезная неблокирующая работа продолжается. Иконка собственного ожидания скрывает сегмент подчинённого вопроса, но не удаляет и не разрешает записанную причину этого вопроса; иконки состояния и ожидания чатов задач не меняются. Stop, граница восстановления 900 секунд, владельцы, фактические отказы, UNKNOWN и защита от повторного выполнения сохраняются.
+- Bundled worker, native-модули и Python-код, а также требования к runtime не изменились относительно 0.6.16. Прежние ограничения среды сохраняются; отдельные загрузки промежуточных версий не вводятся.
+
 # TokenBand 0.6.16 — experimental
 
 Выпуск от 27 ноября 2026 года, ревизия 20261127.2.

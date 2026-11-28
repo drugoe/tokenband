@@ -300,30 +300,19 @@ visibility and tool qualification keep their separate evidence requirements.
 Keep a small result: actual selected route/checks, known/missing setup, completed
 changes, resulting chat/turn IDs or exact blocker and prepared next action.
 
-### Built-in schedule setup
+<a id="built-in-schedule-setup"></a>
+### Manager work without schedule setup
 
-To establish the active manager's single built-in same-chat hourly schedule
-([host-codex](host-codex.md#built-in-same-chat-hourly-manager-schedule)), first discover
-the actual supported automation/schedule tool on the selected host (including
-`automation_update` where exposed); an empty result is a concrete finding, not proof of server
-incapability, and a Pages/Sites schedule tool is a different target that must not
-register this native manager chat. Reconcile any existing schedule and pending creation
-intent for the exact manager chat ID before acting; create or update idempotently so
-exactly one hourly same-chat schedule exists with the exact manager ID, cadence and
-timezone configured, never a per-task schedule and never one on an inactive chat.
-Before the first create/update, durably save its exact intent in the existing task evidence: manager chat and host, operation and known schedule ID for an update, cadence/timezone, and prompt identity. A prepared intent is not registration. After interruption, reconcile that intent, any ACK and the actual schedule without replay.
-After create/update, save the ACK before any later operation, then read back
-the exact chat ID, cadence, timezone and target before treating it as configured; an unknown create/turn outcome requires
-reconciliation, never replay.
-
-A schedule is LIVE only after that supported create, ACK, readback and an observed hourly
-run and effect. If no supported tool is exposed, skip automation setup, briefly record
-that actual reason in the existing task evidence and continue authorized work without
-waiting for the tool or creating a required pending follow-up solely for this absence.
-Do not treat unavailable automation as a prerequisite to task execution or acceptance;
-preserve any existing unknown operation and actual task constraints. Do not register the schedule
-through files, TOML, raw RPC, cron or any other product, and do not claim a live or timed
-run from a manual check.
+Manager creation/adoption/continuation performs no manager-schedule discovery,
+creation, update, resumption, retargeting or use and no reusable hourly prompt
+setup. It requires no timer, schedule-related intent, ACK/readback, automation
+wait or pending setup follow-up. Do not use files, TOML, raw RPC, cron, a system
+scheduler, a daemon, a custom service or another product as a substitute. State
+checks and any separately authorized exact-timer action follow
+[lifecycle](lifecycle.md#manager-state-check-without-automation); lack of an
+automation tool neither blocks intake/authorized work nor proves host
+incapability. Editing this package removes no existing timer and changes no other
+user automation.
 
 ## Modes and model pool
 

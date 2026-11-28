@@ -4,9 +4,9 @@
 
 Keep project work organised, resumable and independently checked. TokenBand gives AI agents a shared task list, a dedicated chat for each substantial task, and a clear process for reviewing and accepting results.
 
-**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.16-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
+**[Download ZIP](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.20-skill.zip)** · [Quick start](docs/quickstart.md) · [Example](docs/example.md) · [Русский](README.ru.md)
 
-**0.6.16** · **Experimental** · [**MIT**](LICENSE)
+**0.6.20** · **Experimental** · [**MIT**](LICENSE)
 
 ## What you get
 
@@ -19,7 +19,13 @@ Simple factual answers and meaning-preserving mechanical corrections stay direct
 
 ## Latest update
 
-TokenBand 0.6.16 shows task state in chat titles with 🟡 for queued work, ⚙️ after confirmed start, ✔️ after acceptance, 🙋 for a human decision, 💤 for a task dependency, ⏳ for other waiting, ⏸️ for a confirmed pause, ❌ for explicit human cancellation, and 🚫 for authorized cancellation when the task is no longer needed. See [release notes](docs/releases/0.6.16.md).
+TokenBand **0.6.20**, revision **20261128.4**, cumulatively includes the instruction updates from 0.6.17–0.6.20. Managers check state and continue useful authorized work only within an actual working turn: supported finite observation, result intake, required independent review and a ready next step can remain in that turn. This creates no periodic manager checks, background wake-ups, timers, daemons, endless polling or acknowledgement loop. Changing the instructions does not delete an existing timer.
+
+Active standalone work contributes `0` to the manager title and retains full `0.<task>` task titles; historical `00` remains distinct. Each managed chat applies its confirmed own status icon in an authorized turn, while author DONE remains separate from acceptance.
+
+Current title rules keep an active manager's leading `🧑‍💼`; its own blocking wait is shown by a second icon—`🙋` for a human, `💤` for another chat or delegated model, or `⏳` for a tool/network-only wait—in that precedence and before any applicable archive `☑️`. For example, `🧑‍💼 💤 0,00,8 / ⭐ MANAGER — Description` shows that wait for a verified chief among several verified active managers. The own-wait icon hides any subordinate-question segment without resolving its recorded reason; useful non-blocking work continues, and task-chat state and wait icons are unchanged. `⭐` remains immediately before `MANAGER` only for the verified chief among several verified active managers, and a sole active manager has no star. `✅` marks accepted success, while `☑️` marks either authorized terminal closure without success or a separately authorized archive display. A temporary Stop, pause, wait or UNKNOWN is not terminal, and a glyph alone proves neither acceptance nor a host archive action.
+
+The bundled worker, native and Python code and the runtime requirements are unchanged from 0.6.16. Existing ownership, Stop, recovery and non-replay controls still apply. See the [0.6.20 release notes](docs/releases/0.6.20.md).
 
 ## How it fits
 

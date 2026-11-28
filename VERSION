@@ -1,6 +1,6 @@
-version=0.6.16
+version=0.6.20
 maturity=experimental
 license=MIT
-candidate_revision=20261127.2
+candidate_revision=20261128.4
 release_state=experimental_release
 published=true

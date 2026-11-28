@@ -4,12 +4,14 @@
 
 ## 1. Download the package
 
-Download the public installation archive:
+Download the installation archive:
 
-- [tokenband-0.6.16-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.16-skill.zip)
-- SHA-256: `771dc231e4c66942b741edeb1327c73c1edfb0547bf93a172bd2a11dc6f18d10`
+- [tokenband-0.6.20-skill.zip](https://github.com/drugoe/tokenband/raw/refs/heads/main/tokenband-0.6.20-skill.zip)
+- SHA-256: `7f565174b551e551b7f82306ec323872825edd82782175087bed1bbb270cca25`
 
-The ZIP contains the plain skill package: `SKILL.md`, reference documents, templates and an optional Python worker. It is an instruction set, not a finished configured environment.
+Version **0.6.20**, experimental; revision **20261128.4**. The archive contains 34 entries under `tokenband/`: `SKILL.md`, reference documents, templates and the optional Python worker with its supporting modules. It is an instruction set, not a finished configured environment. Use this checksum only for this exact archive.
+
+**Update note:** This package cumulatively includes the instruction updates from 0.6.17–0.6.20. Manager state checks belong to actual authorized working turns, without periodic schedules or self-wakeup promises. Title rules clarify standalone `0`, each chat's own status icon, waiting states, and the distinct meanings of `✅` and `☑️`. The bundled worker, native and Python code and the runtime requirements are unchanged from 0.6.16. See the [0.6.20 release notes](releases/0.6.20.md); do not apply this checksum to any other archive.
 
 ## 2. Place the skill for your host
 
@@ -27,7 +29,7 @@ The instructions do not require a particular model family. The full workflow sti
 
 ## 3. One host-specific installation example
 
-The following is one explicitly host-specific example for a known working setup, not a universal requirement:
+The following is one explicitly host-specific example for a known working setup, not a universal requirement or a claim about every Codex version or configuration:
 
 1. Copy the extracted `tokenband` folder into `~/.codex/skills/tokenband`.
 2. Start or resume a Codex session in your project directory.
